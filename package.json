@@ -1,0 +1,19 @@
+{
+  "name": "weather-app-v-1",
+  "version": "1.0.0",
+  "description": "Try to write weather app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Whitemple/weatherAppV1.git"
+  },
+  "author": "Iaroslav Khromei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Whitemple/weatherAppV1/issues"
+  },
+  "homepage": "https://github.com/Whitemple/weatherAppV1#readme"
+}
