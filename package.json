@@ -4,7 +4,7 @@
   "description": "Try to write weather app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Whitemple/weatherAppV1/issues"
   },
-  "homepage": "https://github.com/Whitemple/weatherAppV1#readme"
+  "homepage": "https://github.com/Whitemple/weatherAppV1#readme",
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@types/jest": "^29.4.0",
+    "babel-jest": "^29.4.3",
+    "jest": "^29.4.3",
+    "jest-environment-jsdom": "^29.4.3"
+  }
 }
