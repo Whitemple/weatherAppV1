@@ -1,4 +1,4 @@
-import { sum } from "./index";
+import { sum } from "./example.js";
 
 describe("sum func", () => {
   test("expect sum", () => {

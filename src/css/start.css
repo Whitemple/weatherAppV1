@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+}
+/*
+@font-face{
+    font-family:’название шрифта’;
+    src: local(‘название шрифта’);
+    src: url(‘ссылка на шрифт’);
+*/

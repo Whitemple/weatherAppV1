@@ -17,7 +17,9 @@ module.exports = {
       "error",
       {
         ignoreComments: true,
+        ignoreUrls: true,
       },
     ],
+    "import/extensions": [0, { js: "always" }],
   },
 };
