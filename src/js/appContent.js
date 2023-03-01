@@ -1,4 +1,8 @@
+import { directionOfwWind, capFirstWord } from "./helper.js";
+
 export const appContent = (data) => {
+  // Создаем элементы
+
   const main = document.createElement("main");
   const section = document.createElement("section");
   const container = document.createElement("div");
@@ -14,6 +18,8 @@ export const appContent = (data) => {
   const weatherInfoHumidity = document.createElement("li");
   const weatherInfoClouds = document.createElement("li");
 
+  // Присваивамем им классы
+
   section.classList.add("weather");
   container.classList.add("container", "weather__container");
   inner.classList.add("weather__inner");
@@ -28,10 +34,52 @@ export const appContent = (data) => {
   weatherInfoPressure.classList.add("weather-info__item");
   weatherInfoClouds.classList.add("weather-info__item");
 
+  // Наполняем контентом
+
   temperature.textContent = Math.floor(data.main.temp);
-  description.textContent = data.weather[0].description;
+  description.textContent = capFirstWord(data.weather[0].description);
   iconBloc.src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
   units.textContent = "o";
+
+  // Пишем функции, которые будут возвращать описание в weatherInfoList
+
+  const createWeatherItemTitle = (text) => {
+    const span = document.createElement("span");
+    span.textContent = text;
+    return span;
+  };
+
+  const createWeatherItemContent = (text) => {
+    const p = document.createElement("p");
+    p.textContent = text;
+    return p;
+  };
+
+  // Добавляем контент в элементы списка
+
+  weatherInfoWind.append(
+    createWeatherItemTitle("Ветер"),
+    createWeatherItemContent(
+      `${data.wind.speed} м/с, ${directionOfwWind(data.wind.deg)}`
+    )
+  );
+
+  weatherInfoPressure.append(
+    createWeatherItemTitle("Давление"),
+    createWeatherItemContent(`${data.main.pressure} мм рт.ст.`)
+  );
+
+  weatherInfoHumidity.append(
+    createWeatherItemTitle("Влажность"),
+    createWeatherItemContent(`${data.main.humidity} %`)
+  );
+
+  weatherInfoClouds.append(
+    createWeatherItemTitle("Облачность"),
+    createWeatherItemContent(`${data.clouds.all} %`)
+  );
+
+  // Добавляем элементы друг в друга
 
   main.append(section);
   section.append(container);

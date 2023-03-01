@@ -1,3 +1,5 @@
+import { heandleWeatherByGeolocation } from "./geolocation.js";
+
 export const createHeader = (city) => {
   const header = document.createElement("header");
   const headerContainer = document.createElement("div");
@@ -29,6 +31,15 @@ export const createHeader = (city) => {
   cityName.textContent = city;
   cityChange.textContent = "Сменить город";
   cityLocation.textContent = "Мое местоположение";
+
+  // Ставим слушатель событий на кнопку для появления меню поиска
+  cityChange.addEventListener("click", () => {
+    headerCity.innerHTML = "";
+    searchBlock.append(searchInput, searchBtn, errorBlock);
+    headerCity.append(searchBlock);
+  });
+
+  cityLocation.addEventListener("click", heandleWeatherByGeolocation);
 
   header.append(headerContainer);
   headerContainer.append(headerCity, headerUnits);
